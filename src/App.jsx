@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import './App.css'
+import { getArticles } from '../api'
+import { Homepage } from '../components/Homepage'
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+    <Homepage />
     </>
   )
 }

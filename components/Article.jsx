@@ -15,7 +15,6 @@ export const Article = () => {
     useEffect(() => {
             getArticleComments(article_id).then((data) => {
                 setComments(data)
-                // console.log(data, "in article")
             })
         }, [])
     return (

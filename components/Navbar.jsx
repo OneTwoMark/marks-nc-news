@@ -1,9 +1,17 @@
+import { Link, Routes, Route } from "react-router-dom";
+
 export const Navbar = () => {
     return (
-    <div id="Navbar">
-        <p>Navbar</p>
-        <p>Login</p>
-        <p>Sign up</p>
-    </div>
+    <nav id="Navbar">
+        <Link id="home" className="link" to="/">
+                  Home
+        </Link>
+        <Link className="link" to="/new-user">
+                  Register
+        </Link>
+        <Link id="login" className="link" to="/login">
+                  Login
+        </Link>
+    </nav>
     )
 }

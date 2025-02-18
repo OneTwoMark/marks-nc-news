@@ -5,45 +5,62 @@
 #homepage {
   display: grid;
   grid-template-columns: (3, 1fr);
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 0.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas: 
   "header header header"
-  ". . ."
-  "article article article"
-  "article article article"
-  "article article article"
-  "article article article";
+  "articles articles articles"
+  "articles articles articles"
+  "articles articles articles"
+  "articles articles articles";
   height: 100vh;
 }
 /*----====HEADER AND NAVBAR====----*/
 #header-container {
-  border: 1px solid black;
+  
   grid-area: header;
   display: flex;
   flex-direction: row;
-  background-color: rgb(118, 119, 119);
+  height: 2;
+  background-color: #303030;
 }
 
 #Navbar {
   background-color: #303030;
   align-items: center;
-  justify-content: end;
+  /* justify-content: end;  */
   display: flex;
   width: 100vw;
   min-height: 10vh;
-  max-height: 10vh;
+  max-height: 20vh;
+  font-size: 25px;
+  padding-top: 10px;
 }
 
-#Navbar p {
+#login {
+  background-color: rgb(236, 194, 7);
+  margin-right: 20px;
+  border-radius: 10px;
+  color: rgb(48, 48, 48);
+}
+
+#home {
+  margin-right: auto;
+}
+
+#Navbar a {
   padding: 20px;
   padding-right: 30px;
   color: aliceblue;
 }
+
+a {
+  text-decoration: none;
+}
 /*----====----*/
 
-#article-container {
+#articles-container {
   border: 1px solid black;
-  grid-area: article;
+  grid-area: articles;
   overflow-y: auto;
   display: flex;
   background-color: #c2c0c0;
@@ -65,16 +82,43 @@
 
 .single_article {
   margin: 20px;
-  padding: 10px;
+  padding: 5px;
   border: solid 1px black;
-  width: 25%;
+  width: 20%;
   border-radius: 15px;
-  height: 60%;
+  height: 40%;
   background-color: #b1b1b1;
+  text-align: center;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
+  list-style: none;
+}
+
+#list-title {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#list-author {
+  padding-bottom: 15px;
+}
+
+#list-img-container {
+  margin: 30px;
+  margin-bottom: 10px;
 }
 
 #list-img {
-  height: 50%;
-  width: 50%;
+  height: 70%;
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
 }
+
+#list-link {
+  font-size: larger;
+  color: red;
+  border: 1px solid black;
+}
+
+
 

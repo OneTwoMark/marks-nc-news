@@ -8,7 +8,8 @@
     "article article article"
     "article article article"
     "article article article"
-    "article article article";
+    "article article article"
+    "comments comments comments";
     min-height: 100vh;    
 }
 
@@ -32,17 +33,33 @@
     box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
 }
 
+#comments-container {
+    grid-area: comments;
+    margin: 50px;
+    margin-top: 0px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 25px;
+    list-style: none;
+    background-color: #464545;
+    overflow-y: auto;
+    max-height: 40vh;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
+}
+
 /*---===CONTENT===---*/
 
 
 
 #article-title {
     font-size: 35px;
+    font-weight: bolder;
 }
 
 #article-body {
     margin: 10px;
     font-size: 25px;
+    width: 40vw;
 }
 
 #article-topic {
@@ -58,3 +75,38 @@
     font-weight: bolder;
 }
 
+.single-comment {
+    padding-top: 10px;
+}
+
+#comment-author {
+    color: rgb(236, 194, 7);
+    font-size: larger;
+}
+
+#comment-body {
+    font-size: 20px;
+    color: aliceblue;
+    margin-bottom: 10px;
+}
+
+#comment-votes {
+    display: inline-block;
+    margin: 10px;
+}
+
+#vote-count {
+    background-color: rgb(236, 194, 7);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bolder;
+    border: 3px solid black;
+}
+
+#upvote, #downvote {
+    background-color: rgb(236, 194, 7);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bolder; 
+    border: 3px solid black;
+}

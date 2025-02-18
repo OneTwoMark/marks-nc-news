@@ -10,7 +10,7 @@ export const Navbar = () => {
                   Register
         </Link>
         <Link id="login" className="link" to="/login">
-                  Login
+                  <span id="login-text">Login</span>
         </Link>
     </nav>
     )

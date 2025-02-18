@@ -40,6 +40,9 @@
   background-color: rgb(236, 194, 7);
   margin-right: 20px;
   border-radius: 10px;
+}
+
+#login-text {
   color: rgb(48, 48, 48);
 }
 
@@ -86,7 +89,7 @@ a {
   border: solid 1px black;
   width: 20%;
   border-radius: 15px;
-  height: 40%;
+  min-height: 50%;
   background-color: #b1b1b1;
   text-align: center;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
@@ -96,6 +99,8 @@ a {
 #list-title {
   font-size: 20px;
   font-weight: bolder;
+  margin-bottom: 10px;
+  color: rgb(48, 48, 48);;
 }
 
 #list-author {
@@ -115,9 +120,19 @@ a {
 }
 
 #list-link {
-  font-size: larger;
-  color: red;
-  border: 1px solid black;
+  margin-top: auto;
+  /* border: 1px solid black; */
+}
+
+#list-link-text {
+  font-size: 1.5em;
+  margin-top: auto;
+  padding: 5px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bolder;
+  background-color:rgb(48, 48, 48);
 }
 
 

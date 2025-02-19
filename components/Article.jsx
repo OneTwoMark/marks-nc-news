@@ -28,7 +28,7 @@ export const Article = () => {
             if(!username) {
                 alert("Please sign in to vote")
              }
-            if (amountVoted > 0){
+            else if (amountVoted > 0){
                 alert("You have already voted")
             } else {
                 setAmountVoted(amountVoted+1)
@@ -44,7 +44,7 @@ export const Article = () => {
             if(!username) {
                 alert("Please sign in to vote")
              }
-            if (amountVoted < 0){
+             else if (amountVoted < 0){
                 alert("You have already voted")
             } else {
                 setAmountVoted(amountVoted -1)

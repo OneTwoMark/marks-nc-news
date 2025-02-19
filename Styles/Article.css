@@ -23,7 +23,7 @@
     grid-area: article;
     border: 1px solid black;
     border-radius: 25px;
-    background-color: #c2c0c0;
+    background-color: #cfcece;
     margin: 2.5%;
     padding: 2.5%;
     display: flex;
@@ -52,7 +52,7 @@
 
 
 #article-title {
-    font-size: 35px;
+    font-size: 20px;
     font-weight: bolder;
 }
 
@@ -73,6 +73,25 @@
 #article-created-at {
     margin-bottom: 2%;
     font-weight: bolder;
+}
+
+#article-votes {
+    height: 55px;
+    font-size: 40px;
+}
+
+#article-upvote, #article-downvote {
+    background-color: #464545;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bolder; 
+    border: 3px solid black;
+    cursor: pointer;
+    color: rgb(236, 194, 7);
+}
+
+#article-upvote {
+    margin-top: 30px;
 }
 
 .single-comment {
@@ -110,3 +129,53 @@
     font-weight: bolder; 
     border: 3px solid black;
 }
+
+/* Mobile Styles */
+@media only screen and (max-width: 700px) {
+    #article-page {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "article"
+            "comments";
+        padding: 0.5rem;
+    }
+
+    #article-container {
+        width: 90%;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    #comments-container {
+        margin: 1rem 0;
+        padding: 1rem;
+        max-height: none;
+    }
+
+    #article-img {
+        width: 100%;
+    }
+
+    #article-title {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    #article-body {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #article-created-at {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    #comment-body {
+        font-size: 16px;
+    }
+}
+

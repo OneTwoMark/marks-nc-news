@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import './App.css'
-import { getArticles } from '../api'
+import '../Styles/App.css'
 import { Homepage } from '../components/Homepage'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "../components/Header"
 import { Article } from '../components/Article';
 import { Login } from '../components/Login';
+import { UserProvider } from '../contexts/UserContext';
 
 
 
@@ -13,6 +13,7 @@ import { Login } from '../components/Login';
 function App() {
 
   return (
+  <UserProvider>
     <Router>
       <Header />
       <Routes>
@@ -22,6 +23,7 @@ function App() {
         {/* <Route path="/create-user" element={<CreateUser />} /> */}
       </Routes>
     </Router>
+    </UserProvider>
   )
 }
 

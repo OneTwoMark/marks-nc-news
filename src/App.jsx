@@ -20,7 +20,6 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/article/:article_id" element={<Article />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/create-user" element={<CreateUser />} /> */}
       </Routes>
     </Router>
     </UserProvider>

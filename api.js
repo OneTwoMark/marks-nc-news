@@ -58,3 +58,9 @@ export const getUsers = () => {
         return users.data
     })
 }
+
+export const deleteComment = (comment_id) => {
+    return ncNewsData.delete(`comments/${comment_id}`).then((response)=>{
+        response.data
+    })
+}

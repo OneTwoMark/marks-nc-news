@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { getArticleComments, getArticlesById, patchArticleDownvote, patchArticleUpvote } from '../api';
+import { getArticleComments, getArticlesById, patchArticleDownvote, patchArticleUpvote, postComment } from '../api';
 import '../Styles/Article.css' 
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
@@ -12,6 +12,9 @@ export const Article = () => {
     const [comments, setComments] = useState([])
     const [amountVoted, setAmountVoted] = useState (0)
     const {article_id} = useParams()
+    const [commentBody, setCommentBody] = useState("")
+    const [commentPosted, setCommentPosted] = useState(false)
+
     useEffect(() => {
             getArticlesById(article_id).then((data) => {
                 setArticle(data)
@@ -28,7 +31,7 @@ export const Article = () => {
             if(!username) {
                 alert("Please sign in to vote")
              }
-            if (amountVoted > 0){
+            else if (amountVoted > 0){
                 alert("You have already voted")
             } else {
                 setAmountVoted(amountVoted+1)
@@ -44,7 +47,7 @@ export const Article = () => {
             if(!username) {
                 alert("Please sign in to vote")
              }
-            if (amountVoted < 0){
+            else if (amountVoted < 0){
                 alert("You have already voted")
             } else {
                 setAmountVoted(amountVoted -1)
@@ -55,6 +58,40 @@ export const Article = () => {
                 });
             }
         };
+
+        const handlePostComment = (e) => {
+            e.preventDefault()
+            if (!username) {
+                alert("Please sign in")
+                return 
+            }
+            if (commentBody.trim() === "") {
+                alert("Comment cannot be empty")
+                return
+            }
+
+            postComment(article_id, username, commentBody).then(()=>{
+                setCommentBody("")
+
+            getArticleComments(article_id).then((data) => {
+                    setComments(data);
+                    setCommentPosted(true)
+                });
+            })
+        }
+
+        function handleDate(dateVar) {
+            const formattedDate = new Date(dateVar).toLocaleString('en-US', {
+                weekday: 'short', 
+                year: 'numeric',  
+                month: 'short',  
+                day: 'numeric',   
+                hour: '2-digit',  
+                minute: '2-digit',
+                hour12: true      
+              });  
+            return formattedDate
+        }
 
     return (
     <div id="article-page">
@@ -75,6 +112,7 @@ export const Article = () => {
         {comments.map((comment) => {
         return  <li className='single-comment' key={comment.comment_id}>
             <div id='comment-author'>{comment.author}</div>
+            <div id='comment-time'>{handleDate(comment.created_at)}</div>
             <hr></hr>
             <div id='comment-body'>{comment.body}</div>
             <span id='downvote'>↓</span>
@@ -83,6 +121,19 @@ export const Article = () => {
         </li>
         })}
     </div>
+
+    <form id='create-comment-container'>
+    <input onChange={(e) => {
+        setCommentBody(e.target.value)
+    }}
+    value={commentBody}
+    id='create-comment' 
+    type="text" 
+    placeholder='leave a comment' />
+    <button id='comment-submit' className={commentPosted ? 'yellow-button' : 'gray-button'}
+    type='submit' 
+    onClick={handlePostComment}>{commentPosted ? 'posted!' : 'post'}</button>
+    </form>
     </div>
     )
 }

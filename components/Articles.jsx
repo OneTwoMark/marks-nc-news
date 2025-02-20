@@ -4,11 +4,19 @@ import { Link, Routes, Route } from "react-router-dom";
 
 export const Articles = () => {
     const [articles, setArticles] = useState([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
+        setLoading(true)
         getArticles().then((data) => {
             setArticles(data)
         })
+        setLoading(false)
     }, [])
+    if (loading) {
+        return (
+            <p id="loading">Loading Articles...</p>
+        )
+    }
     return (
     <div id="articles">
         {articles.map((article) => {

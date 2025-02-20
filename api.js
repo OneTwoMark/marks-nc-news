@@ -42,3 +42,19 @@ export const patchArticleDownvote = (query) => {
         handleError(error)
     })
 }
+
+export const postComment = (query, username, comment) => {
+    return ncNewsData.post(`/articles/${query}/comments`, {username: username, body: comment})
+    .then((response) => {
+        return response.data
+    })
+    .catch((error) => {
+        handleError(error)
+    })
+}
+
+export const getUsers = () => {
+    return ncNewsData.get(`/users`).then((users)=> {
+        return users.data
+    })
+}

@@ -9,8 +9,9 @@ export const Articles = () => {
         setLoading(true)
         getArticles().then((data) => {
             setArticles(data)
+            setLoading(false)
         })
-        setLoading(false)
+        
     }, [])
     if (loading) {
         return (

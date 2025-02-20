@@ -44,7 +44,7 @@
     list-style: none;
     background-color: #464545;
     overflow-y: auto;
-    max-height: 40vh;
+    max-height: 45vh;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
 }
 
@@ -105,9 +105,10 @@
 }
 
 #comment-body {
-    font-size: 20px;
+    font-size: 23px;
     color: aliceblue;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 #comment-votes {
@@ -129,6 +130,22 @@
     padding: 10px;
     font-weight: bolder; 
     border: 3px solid black;
+}
+
+#delete-container {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 90%;
+}
+
+#delete-button {
+    width: 40px;
+        height: 40px;
+        background-color: #464545;
+        border: solid 2px rgb(190, 48, 48);
+        border-radius: 10px;
+        color: rgb(226, 65, 65);
+        cursor: pointer;
 }
 
 #create-comment-container {
@@ -166,6 +183,10 @@
 
 .yellow-button {
     background-color: rgb(236, 194, 7);
+}
+
+hr {
+    border: 1px dashed black;
 }
 
 
@@ -227,6 +248,22 @@
         border-radius: 20px;
         border: none;
         width: 50%;
+    }
+    #delete-container {
+        display: inline-flex;
+        justify-content: flex-end;
+        width: 60%;
+        text-align: center;
+    }
+    
+    #delete-button {
+        width: 30px;
+        height: 30px;
+        background-color: #464545;
+        border: solid 1px rgb(190, 48, 48);
+        border-radius: 10px;
+        color: rgb(226, 65, 65);
+        cursor: pointer;
     }
 }
 

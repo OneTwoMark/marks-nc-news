@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { getArticleComments, getArticlesById, patchArticleDownvote, patchArticleUpvote, postComment } from '../api';
+import { deleteComment, getArticleComments, getArticlesById, patchArticleDownvote, patchArticleUpvote, postComment } from '../api';
 import '../Styles/Article.css' 
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
@@ -25,7 +25,7 @@ export const Article = () => {
             getArticleComments(article_id).then((data) => {
                 setComments(data)
             })
-        }, [])
+        }, [comments])
 
         const handleUpvote = () => {
             if(!username) {
@@ -76,6 +76,9 @@ export const Article = () => {
             getArticleComments(article_id).then((data) => {
                     setComments(data);
                     setCommentPosted(true)
+                    setTimeout(() => {
+                        setCommentPosted(false)
+                    }, 3000)
                 });
             })
         }
@@ -91,6 +94,14 @@ export const Article = () => {
                 hour12: true      
               });  
             return formattedDate
+        }
+
+        function handleDelete(comment_id) {
+            deleteComment(comment_id)
+
+            getArticleComments(article_id).then((data) => {
+                setComments(data);
+            });
         }
 
     return (
@@ -111,13 +122,16 @@ export const Article = () => {
     <div id='comments-container'>
         {comments.map((comment) => {
         return  <li className='single-comment' key={comment.comment_id}>
+            <hr></hr>
             <div id='comment-author'>{comment.author}</div>
             <div id='comment-time'>{handleDate(comment.created_at)}</div>
-            <hr></hr>
+            
             <div id='comment-body'>{comment.body}</div>
             <span id='downvote'>↓</span>
             <span id='comment-votes'><span id='vote-count'>{comment.votes}</span></span>
             <span id='upvote'>↑</span>
+            {username === comment.author ? (<span id='delete-container'><button onClick={() => handleDelete(comment.comment_id)} 
+            id='delete-button'>X</button></span>) : ('')}
         </li>
         })}
     </div>

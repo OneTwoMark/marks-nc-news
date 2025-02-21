@@ -4,12 +4,12 @@
     grid-template-columns: (3, 1fr);
     grid-template-rows: minmax(0, 0.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: 
-    "header header header"
     "article article article"
     "article article article"
     "article article article"
     "article article article"
-    "comments comments comments";
+    "comments comments comments"
+    "post post post";
     min-height: 100vh;    
 }
 
@@ -23,7 +23,7 @@
     grid-area: article;
     border: 1px solid black;
     border-radius: 25px;
-    background-color: #cfcece;
+    background-color: rgb(236, 194, 7);
     margin: 2.5%;
     padding: 2.5%;
     display: flex;
@@ -165,6 +165,7 @@
     outline: none;
     width: 500px;
     height: 80px;
+    grid-area: post;
 }
 
 #comment-submit {
@@ -172,6 +173,7 @@
     margin: 10px;
     border: none;
     border-radius: 15px;
+    grid-area: post;
 }
 
 #posted-ternary {

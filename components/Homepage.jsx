@@ -5,9 +5,9 @@ import { Header } from "./Header"
 export const Homepage = () => {
 return (
 <div id="homepage">
-    <div id="header-container">
+    {/* <div id="header-container">
         
-    </div>
+    </div> */}
     <div id="articles-container">
         <Articles />
     </div>

@@ -7,12 +7,13 @@
   grid-template-columns: (3, 1fr);
   grid-template-rows: minmax(0, 0.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas: 
-  "header header header"
   "articles articles articles"
   "articles articles articles"
   "articles articles articles"
   "articles articles articles";
   height: 100vh;
+  justify-content: center;
+  background-color: #444444;
 }
 /*----====HEADER AND NAVBAR====----*/
 #header-container {
@@ -71,13 +72,16 @@ a, #sign-out{
 /*----====----*/
 
 #articles-container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   grid-area: articles;
   overflow-y: auto;
   display: flex;
-  background-color: #cfcece;
-  width: 100vw;
+  background-color: #444444;
+  width: 95vw;
+  height: 80vh;
   justify-content: center;
+  border-radius: 25px;
+  margin-top: 2.5%;
 }
 
 #articles {
@@ -99,7 +103,7 @@ a, #sign-out{
   width: 20%;
   border-radius: 15px;
   min-height: 50%;
-  background-color: #b1b1b1;
+  background-color: rgb(236, 194, 7);
   text-align: center;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
   list-style: none;
@@ -125,7 +129,7 @@ a, #sign-out{
   height: 70%;
   width: 90%;
   border-radius: 20px;
-  box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
+  /* box-shadow: 4px 4px rgba(0, 0, 0, 0.589); */
 }
 
 #list-link {
@@ -134,7 +138,7 @@ a, #sign-out{
 }
 
 #list-link-text {
-  font-size: 1.5em;
+  font-size: 1em;
   margin-top: auto;
   padding: 5px;
   color: rgb(255, 255, 255);

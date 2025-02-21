@@ -5,9 +5,15 @@ const ncNewsData = axios.create({
     baseURL: "https://marks-be-nc-news.onrender.com/api/",
 });
 
-export const getArticles = () => {
-    return ncNewsData.get("/articles").then((response) => {
+export const getArticles = (topic) => {
+    return ncNewsData.get("/articles", { params: { 
+        topic: topic
+    } }).then((response) => {
+        console.log(topic, "in api")
         return response.data.articles
+    })
+    .catch((error) => {
+        handleError(error)
     })
 }
 
@@ -62,5 +68,11 @@ export const getUsers = () => {
 export const deleteComment = (comment_id) => {
     return ncNewsData.delete(`comments/${comment_id}`).then((response)=>{
         response.data
+    })
+}
+
+export const getArticleTopics = () =>{
+    return ncNewsData.get(`topics`).then((topics) => {
+        return topics.data
     })
 }

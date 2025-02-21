@@ -106,7 +106,7 @@ export const Article = () => {
 
     return (
     <div id="article-page">
-    <div id="header-container"></div>
+    {/* <div id="header-container"></div> */}
         
     <div id="article-container">
     <span id="list-img-container"><img id="article-img" src={article.article_img_url}/></span>

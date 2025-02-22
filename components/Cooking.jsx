@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom"
 import { getArticles } from "../api"
 import { FaRegComment, FaRegThumbsUp } from "react-icons/fa"
 
-export const Football = () => {
+export const Cooking = () => {
 const {topic} = useParams()
 const [articles, setArticles] = useState([])
 const [sortBy, setSortBy] = useState("created_at");
@@ -12,9 +12,8 @@ useEffect(() => {
     getArticles({
         topic: topic,
         sort_by: sortBy,
-        order: order
+        order: order 
     }).then((response)=>{
-        console.log(response)
         setArticles(response)
     })
 }, [topic, sortBy, order])
@@ -45,14 +44,13 @@ const handleOrderChange = (e) => {
         <div id="articles">
         {articles.map((article) => {
               return <li className="single_article-topic" key={article.article_id}>
-            <div id="list-link">
             <Link to={`/article/${article.article_id}`}>
                 <div id="list-img-container"><img id="list-img" src={article.article_img_url}/></div> <br/>
                 <div id="list-title">{article.title} </div>
                 <div id="list-votes"><FaRegThumbsUp />  {article.votes}</div>
                 <div id="list-comments"><FaRegComment />  {article.comment_count} </div>
+                {/* <div id="list-link"> <Link to={`/article/${article.article_id}`}><span id="list-link-text">Read More</span></Link></div> */}
                 </Link>
-            </div>
               </li>
            })
         }

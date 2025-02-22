@@ -8,9 +8,7 @@ return (
     {/* <div id="header-container">
         
     </div> */}
-    <div id="articles-container">
         <Articles />
-    </div>
 </div>
 )
 }

@@ -5,16 +5,14 @@ const ncNewsData = axios.create({
     baseURL: "https://marks-be-nc-news.onrender.com/api/",
 });
 
-export const getArticles = (topic) => {
-    return ncNewsData.get("/articles", { params: { 
-        topic: topic
-    } }).then((response) => {
-        console.log(topic, "in api")
+export const getArticles = (queries = {}) => {
+    console.log(queries, "queries")
+    return ncNewsData.get("/articles", { params: queries }).then((response) => {
         return response.data.articles
     })
     .catch((error) => {
         handleError(error)
-    })
+    }) 
 }
 
 export const getArticlesById = (query) => {

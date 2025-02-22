@@ -1,5 +1,5 @@
 import axios from "axios"
-import { handleError } from "./utils";
+import { handleError } from "../utils";
 
 const ncNewsData = axios.create({
     baseURL: "https://marks-be-nc-news.onrender.com/api/",

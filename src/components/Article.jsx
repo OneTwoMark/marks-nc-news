@@ -3,7 +3,7 @@ import { deleteComment, getArticleComments, getArticlesById, patchArticleDownvot
 import '../Styles/Article.css' 
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
-import { handleError } from '../utils';
+import { handleError } from '../../utils';
 
 export const Article = () => {
     const {username} = useContext(UserContext)

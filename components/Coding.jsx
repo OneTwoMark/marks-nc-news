@@ -44,13 +44,13 @@ const handleOrderChange = (e) => {
         <div id="articles">
         {articles.map((article) => {
               return <li className="single_article-topic" key={article.article_id}>
-              <Link to={`/article/${article.article_id}`}>
-                  <div id="list-img-container"><img id="list-img" src={article.article_img_url}/></div> <br/>
-                  <div id="list-title">{article.title} </div>
-                  <div id="list-votes"><FaRegThumbsUp />  {article.votes}</div>
-                  <div id="list-comments"><FaRegComment />  {article.comment_count} </div>
-                  </Link>
-                </li>
+            <Link to={`/article/${article.article_id}`}>
+                <div id="list-img-container"><img id="list-img" src={article.article_img_url}/></div> <br/>
+                <div id="list-title">{article.title} </div>
+                <div id="list-votes"><FaRegThumbsUp />  {article.votes}</div>
+                <div id="list-comments"><FaRegComment />  {article.comment_count} </div>
+                </Link>
+              </li>
            })
         }
     </div>

@@ -49,7 +49,6 @@ const handleOrderChange = (e) => {
                 <div id="list-title">{article.title} </div>
                 <div id="list-votes"><FaRegThumbsUp />  {article.votes}</div>
                 <div id="list-comments"><FaRegComment />  {article.comment_count} </div>
-                {/* <div id="list-link"> <Link to={`/article/${article.article_id}`}><span id="list-link-text">Read More</span></Link></div> */}
                 </Link>
               </li>
            })

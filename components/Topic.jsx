@@ -23,5 +23,5 @@ export const Topic = () => {
     } 
 
 
-    return <div>Topic not found</div>;
+    return <p id="not-found">Topic not found</p>;
 };

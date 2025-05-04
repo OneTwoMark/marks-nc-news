@@ -1,8 +1,20 @@
-# React + Vite
+# News Website Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
+This **solo project** was developed as part of the **Northcoders bootcamp**. It is designed to provide users with an intuitive and interactive news-reading experience.
 
-Currently, two official plugins are available:
+## Features
+- 📰 **Browse & Read Articles** – Easily navigate through various news stories.
+- 💬 **Post Comments** – Engage with articles and share your thoughts.
+- 🔺 **Upvote System** – Vote on articles to influence visibility.
+- 🎛 **Content Filtering** – Sort articles based on relevance and popularity.
+- 📱 **Responsive Design** – Optimized for all screen sizes and devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- ⚛ **React** – Ensuring a dynamic and seamless user experience.
+- 🌐 **REST API** – Fetching and managing news content efficiently.
+- 🎨 **CSS & Styled Components** – Creating a visually appealing interface.
+
+
+---
+

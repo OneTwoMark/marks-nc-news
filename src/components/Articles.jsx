@@ -49,20 +49,23 @@ export const Articles = () => {
                         <option value="asc">Ascending</option>
                     </select>
         </div>
-    <div id="articles-container">
     <div id="articles">
         {articles.map((article) => {
               return <li className="single_article-topic" key={article.article_id}>
-                    <Link to={`/article/${article.article_id}`}>
-                        <div id="list-img-container"><img id="list-img" src={article.article_img_url}/></div> <br/>
-                        <div id="list-title">{article.title} </div>
-                        <div id="list-votes"><FaRegThumbsUp />  {article.votes}</div>
-                        <div id="list-comments"><FaRegComment />  {article.comment_count} </div>
+                    <Link id="list-link" to={`/article/${article.article_id}`}>
+                        <img id="list-img" src={article.article_img_url}/>
+                        <div id="list-content">
+                            <div id="list-title">{article.title} </div>
+                            <div id="list-author">By {article.author}</div>
+                            <div id="list-meta">
+                                <div id="list-votes"><FaRegThumbsUp />  {article.votes}</div>
+                                <div id="list-comments"><FaRegComment />  {article.comment_count} </div>
+                            </div>
+                        </div>
                     </Link>
                 </li>
            })
         }
-    </div>
     </div>
     </>
     )

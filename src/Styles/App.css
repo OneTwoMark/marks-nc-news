@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@400;700&display=swap');
+
 * {
   margin: 0;
 }
@@ -13,7 +15,7 @@
   "articles articles articles";
   min-height: 100vh;
   justify-content: center;
-  background-color: #444444;
+  background-color: #242424;
 }
 /*----====HEADER AND NAVBAR====----*/
 #header-container {
@@ -91,11 +93,11 @@ a, #sign-out{
 }
 
 #articles-container {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   grid-area: articles;
   overflow-y: auto;
   display: flex;
-  background-color: #444444;
+  background-color: #272727;
   width: 95vw;
   height: 80vh;
   justify-content: center;
@@ -125,6 +127,9 @@ a, #sign-out{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 50px;
   /* overflow-y: auto; */
 }
 
@@ -142,40 +147,59 @@ a, #sign-out{
 }
 
 .single_article-topic {
-  margin: 20px;
-  padding: 5px;
-  border-bottom: solid 5px black;
-  width: 20%;
-  border-radius: 10px;
-  min-height: 50%;
-  background-color: rgb(236, 194, 7);
-  text-align: center;
-  /* box-shadow: 4px 4px rgba(0, 0, 0, 0.589); */
-  list-style: none;
+  display: flex; 
+    align-items: center; /* Vertically aligns content */
+    gap: 15px; /* Space between image & text */
+    padding: 15px;
+    /* border: 1px solid #ddd;  */
+    border-radius: 8px;
+    background-color: #303030;
+    margin: 10px;
+    height: 200px;
+    /* width: 900px; */
 }
 
 #list-title {
-  font-size: 20px;
-  font-weight: bolder;
-  margin-bottom: 10px;
-  color: rgb(48, 48, 48);;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: aliceblue;
+  font-family: 'Khand', sans-serif;
+  font-weight: 700;
+  
+
 }
 
 #list-author {
   padding-bottom: 15px;
+  margin-top: auto;
+  color: aliceblue;
 }
 
 #list-img-container {
-  margin: 30px;
-  margin-bottom: 10px;
+  flex: 0 0 120px;
+}
+
+#list-link {
+  display: flex;
+  flex-direction: row;
 }
 
 #list-img {
-  height: 70%;
-  width: 90%;
-  border-radius: 20px;
+  min-width: 20px;
+  height: auto;
+  border-radius: 5px;
+  max-width: 300px;
   /* box-shadow: 4px 4px rgba(0, 0, 0, 0.589); */
 }
+
+#list-content {
+  display: flex;
+  flex-direction: column; /* Stacks elements vertically */
+  flex-grow: 1;
+  margin: 0px 20px 10px 20px;
+  width: 570px;
+}
+
 
 #list-link {
   margin-top: auto;
@@ -184,7 +208,7 @@ a, #sign-out{
 
 #list-votes, #list-comments {
   padding-bottom: 10px;
-  color: black;
+  color: aliceblue;
 }
 
 #list-link-text {
@@ -197,6 +221,18 @@ a, #sign-out{
   font-weight: bolder;
   background-color:rgb(48, 48, 48);
 }
+
+#list-meta {
+  display: flex;
+  gap: 10px; /* Space between votes & comments */
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #cf1515;
+  justify-self: end;
+  margin-left: auto;
+  margin-top: auto;
+}
+
 
 #loading {
   font-size: 50px;

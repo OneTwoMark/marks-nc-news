@@ -171,7 +171,7 @@ a, #sign-out{
 
 #list-author {
   padding-bottom: 15px;
-  margin-top: auto;
+  /* margin-top: auto; */
   color: aliceblue;
 }
 
@@ -228,8 +228,8 @@ a, #sign-out{
   margin-top: 8px;
   font-size: 0.9rem;
   color: #cf1515;
-  justify-self: end;
-  margin-left: auto;
+  align-self: end;
+  /* margin-left: auto; */
   margin-top: auto;
 }
 

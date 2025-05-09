@@ -30,11 +30,13 @@ export const Articles = () => {
         setOrder(e.target.value);
     };
 
-    if (loading) {
-        return (
-            <p id="loading">Loading Articles...</p>
-        )
-    }
+    // if (loading) {
+    //     return (
+    //     <div id="loading-container">
+    //         <p id="loading">Loading Articles...</p> // old way of handling loading state, i moved it to the articles div with a ternary
+    //     </div>
+    //     )
+    // }
     return (
         <>
         <div id="filter-container">
@@ -49,24 +51,32 @@ export const Articles = () => {
                         <option value="asc">Ascending</option>
                     </select>
         </div>
-    <div id="articles">
-        {articles.map((article) => {
-              return <li className="single_article-topic" key={article.article_id}>
-                    <Link id="list-link" to={`/article/${article.article_id}`}>
-                        <img id="list-img" src={article.article_img_url}/>
-                        <div id="list-content">
-                            <div id="list-title">{article.title} </div>
-                            <div id="list-author">By {article.author}</div>
-                            <div id="list-meta">
-                                <div id="list-votes"><FaRegThumbsUp />  {article.votes}</div>
-                                <div id="list-comments"><FaRegComment />  {article.comment_count} </div>
-                            </div>
-                        </div>
-                    </Link>
-                </li>
-           })
-        }
-    </div>
+        <div id="articles">
+  {loading ? (
+    <img id="loading" src="src/assets/loading-7528_256.gif" alt="Loading..." />
+  ) : (
+    articles.map((article) => (
+      <li className="single_article-topic" key={article.article_id}>
+        <Link id="list-link" to={`/article/${article.article_id}`}>
+          <img id="list-img" src={article.article_img_url} />
+          <div id="list-content">
+            <div id="list-title">{article.title}</div>
+            <div id="list-author">By {article.author}</div>
+            <div id="list-meta">
+              <div id="list-votes">
+                <FaRegThumbsUp /> {article.votes}
+              </div>
+              <div id="list-comments">
+                <FaRegComment /> {article.comment_count}
+              </div>
+            </div>
+          </div>
+        </Link>
+      </li>
+    ))
+  )}
+</div>
+
     </>
     )
 }

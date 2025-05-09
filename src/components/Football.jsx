@@ -6,16 +6,20 @@ import { FaRegComment, FaRegThumbsUp } from "react-icons/fa"
 export const Football = () => {
 const {topic} = useParams()
 const [articles, setArticles] = useState([])
+const [loading, setLoading] = useState(true) 
 const [sortBy, setSortBy] = useState("created_at");
 const [order, setOrder] = useState("desc");  
 useEffect(() => {
+    setLoading(true)
     getArticles({
         topic: topic,
         sort_by: sortBy,
         order: order
     }).then((response)=>{
-        console.log(response)
         setArticles(response)
+        setLoading(false)
+    }).catch((error) => {
+        setLoading(false);
     })
 }, [topic, sortBy, order])
 
@@ -42,8 +46,11 @@ const handleOrderChange = (e) => {
                     </select>
                 </div>
         <div id="articles">
-        {articles.map((article) => {
-              return <li className="single_article-topic" key={article.article_id}>
+        {loading ? (
+            <img id="loading" src="src/assets/loading-7528_256.gif" alt="Loading..." />
+        ) : (
+        articles.map((article) => (
+             <li className="single_article-topic" key={article.article_id}>
             <Link id="list-link" to={`/article/${article.article_id}`}>
                 <img id="list-img" src={article.article_img_url}/>
                 <div id="list-content">
@@ -56,8 +63,8 @@ const handleOrderChange = (e) => {
                 </div>
                 </Link>
               </li>
-           })
-        }
+            ))
+        )}
     </div>
     </div>
     )

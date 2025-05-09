@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@400;700&display=swap');
 #article-page {
 
     display: grid;
     grid-template-columns: (3, 1fr);
     grid-template-rows: minmax(0, 0.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: 
-    "article article article"
-    "article article article"
     "article article article"
     "article article article"
     "comments comments comments"
@@ -16,21 +15,21 @@
 /*---===CONTAINERS===---*/
 
 #article-page {
-    background-color: #444444;
+    background-color: #242424;
   }
 
 #article-container {
     grid-area: article;
-    border: 1px solid black;
-    border-radius: 25px;
-    background-color: rgb(236, 194, 7);
+    /* border: 1px solid black;
+    border-radius: 25px; */
+    /* background-color: rgb(236, 194, 7); */
     margin: 2.5%;
     padding: 2.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
-    box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
+    /* box-shadow: 4px 4px rgba(0, 0, 0, 0.589); */
 }
 
 #comments-container {
@@ -40,12 +39,11 @@
     margin-bottom: 10px;
     padding: 20px;
     border: 2px solid black;
-    border-radius: 25px;
+    border-radius: 15px;
     list-style: none;
     background-color: #464545;
     overflow-y: auto;
     max-height: 45vh;
-    box-shadow: 4px 4px rgba(0, 0, 0, 0.589);
 }
 
 /*---===CONTENT===---*/
@@ -55,30 +53,41 @@
 #article-title {
     font-size: 20px;
     font-weight: bolder;
+    font-family: 'Khand', sans-serif;
+    color: aliceblue;
+    margin-top: 50px;
 }
 
 #article-body {
     margin: 10px;
     font-size: 25px;
-    width: 40vw;
+    width: 50vw;
+    font-family: 'Khand', sans-serif;
+    color: aliceblue
+
 }
 
 #article-topic {
     font-weight: bolder;
+    color: aliceblue
 }
 
 #article-author {
     font-weight: bolder;
+    color: aliceblue
 }
 
 #article-created-at {
     margin-bottom: 2%;
     font-weight: bolder;
+    color: aliceblue
 }
 
 #article-votes {
     height: 55px;
     font-size: 40px;
+    font-family: 'Khand', sans-serif;
+    color: aliceblue
 }
 
 #article-upvote, #article-downvote {
@@ -117,19 +126,21 @@
 }
 
 #vote-count {
-    background-color: rgb(236, 194, 7);
+    background-color: #464545;
     border-radius: 10px;
     padding: 10px;
     font-weight: bolder;
     border: 3px solid black;
+    color: rgb(236, 194, 7);
 }
 
 #upvote, #downvote {
-    background-color: rgb(236, 194, 7);
+    background-color: #464545;
     border-radius: 10px;
     padding: 10px;
     font-weight: bolder; 
     border: 3px solid black;
+    color: rgb(236, 194, 7);
 }
 
 #delete-container {
@@ -153,7 +164,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-bottom: 10px;
+    margin-bottom: auto;
     margin-top: 0;
 }
 
